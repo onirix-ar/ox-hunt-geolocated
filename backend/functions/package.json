@@ -1,0 +1,51 @@
+{
+  "name": "ox_hunt_functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve:watch": "firebase emulators:start --inspect-functions --import ./firestore_data",
+    "serve": "npm run build && firebase emulators:start --import ./firestore_data",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "mocha test/**/*.spec.ts -r ts-node/register --async-only -t 150000"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/src/index.js",
+  "dependencies": {
+    "@sendgrid/mail": "^7.5.0",
+    "bcrypt": "^5.0.1",
+    "crypto-js": "^4.1.1",
+    "firebase-admin": "^10.0.2",
+    "firebase-functions": "^3.18.0",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/chai": "^4.3.1",
+    "@types/crypto-js": "^4.0.1",
+    "@types/faker": "^5.5.9",
+    "@types/jsonwebtoken": "^8.5.6",
+    "@types/mocha": "^9.1.1",
+    "@types/node-fetch": "^2.6.1",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "chai": "^4.3.6",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "faker": "^5.5.3",
+    "firebase-functions-test": "^0.2.0",
+    "mocha": "^10.0.0",
+    "reflect-metadata": "^0.1.13",
+    "supertest": "^6.2.3",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.5.4"
+  },
+  "private": true
+}

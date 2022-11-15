@@ -1,0 +1,21 @@
+:root {
+    --font-default: "oxhunt_opensansbold";
+    --font-medium: "oxhunt_opensansmedium";
+    --font-extrabold: "oxhunt_opensansextrabold";
+    --font-light: "oxhunt_opensanslight";
+    --font-italic: "oxhunt_opensansitalic";
+
+    --color-form-background: white;
+    --color-form-border: #c5c9cd;
+
+    --color-font-dark: black;
+    --color-font-light: white;
+
+    --color-primary: #580088;
+    --color-secondary: #ee0979;
+    --color-background-dark: #002750;
+    --color-background-light: white;
+    --color-success: #0bb387;
+    --color-error: #e82b35;
+    --color-warning: #f5a623;
+}

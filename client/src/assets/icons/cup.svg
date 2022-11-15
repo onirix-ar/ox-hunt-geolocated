@@ -1,0 +1,12 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <circle stroke="#FFF" stroke-width="4" fill="#0155D2" cx="50" cy="50" r="48"/>
+        <g stroke="#FFF" stroke-width="3" stroke-dasharray="0,0">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M50.3 59v4.2"/>
+            <path d="M60.3 70v-2c0-2.2-1.8-4-4-4h-12c-2.2 0-4 1.8-4 4v2h20z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M38.3 70h24M36 44v-6c0-4.42 3.58-8 8-8h12c4.42 0 8 3.58 8 8v6c0 7.74-6.26 14-14 14s-14-6.26-14-14z"/>
+            <path d="M33.08 46.9c-1.8-2-3-4.4-3-7.2s2.2-5 5-5h1.3c-.4.92-.6 1.94-.6 3v6c0 2 .42 3.88 1.16 5.6-1.5-.48-2.82-1.36-3.86-2.4zM66.92 46.9c1.8-2 3-4.4 3-7.2s-2.2-5-5-5h-1.3c.4.92.6 1.94.6 3v6c0 2-.42 3.88-1.16 5.6 1.5-.48 2.82-1.36 3.86-2.4z" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <path d="M53.644 38.503a1.714 1.714 0 0 1 2.81 1.957l-.088.128-5.64 7.36c-.495.647-1.37.85-2.093.508l-.142-.076-3.684-2.187a1.714 1.714 0 0 1 1.614-3.022l.137.074 2.373 1.409 4.713-6.15z" fill="#FFF" fill-rule="nonzero"/>
+    </g>
+</svg>

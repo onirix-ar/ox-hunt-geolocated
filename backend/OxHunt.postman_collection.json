@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "fa5c6e5b-34f6-4ecc-a437-88b93fbece67",
+		"name": "OxHunt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11834245"
+	},
+	"item": [
+		{
+			"name": "getSettings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"auth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJsb2NhbFRlc3QiLCJpYXQiOjE2NTM0ODYwMzl9.nG5Rb0olvgRzs6YRPyIiRWZHDyLPfK3z7-Ke7ilrKP4\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/getSettings",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"getSettings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveSettings",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"auth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJsb2NhbFRlc3QiLCJpYXQiOjE2NTM0ODYwMzl9.nG5Rb0olvgRzs6YRPyIiRWZHDyLPfK3z7-Ke7ilrKP4\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/getSettings",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"getSettings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"auth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIzdkVQVnpybExvNEVONG9YVXlERSIsImlhdCI6MTY1MzU2MDkwMn0.Laze1HNdr69Je0ERgH0ob3oVdQIk4kmk-lf2OByvwgs\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/getUser",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"getUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "saveScore",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"auth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJsb2NhbFRlc3QiLCJpYXQiOjE2NTM0ODYwMzl9.nG5Rb0olvgRzs6YRPyIiRWZHDyLPfK3z7-Ke7ilrKP4\",\n        \"body\": {\n            \"sceneOid\": \"4011c3249f5042758f34fa7af509c615\",\n            \"score\": 124\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/saveScore",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"saveScore"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "redeem",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"data\": {\n        \"auth\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJsb2NhbFRlc3QiLCJpYXQiOjE2NTM0ODYwMzl9.nG5Rb0olvgRzs6YRPyIiRWZHDyLPfK3z7-Ke7ilrKP4\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/redeem",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"redeem"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:5001/oxhunt-bdbe4/europe-west1"
+		}
+	]
+}

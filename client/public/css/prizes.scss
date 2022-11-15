@@ -1,0 +1,46 @@
+@import "vars";
+.oxhunt-prize {
+    & + h1 {
+      border-top: solid 1px #c5c9cd;
+      padding-top: 19px;
+      margin-top: 4px;
+    }
+    .oxhunt-prize__image {
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      border: 2px solid var(--color-primary);
+      border-bottom: none;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin: 0px;
+        border-radius: 8px;
+      }
+    }
+    .oxhunt-prize__content {
+      padding: 20px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      background-color: var(--color-primary);
+      font-size: 16px;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 16px;
+      p {
+        margin: 10px 0px 0px 0px;
+        &.oxhunt-prize__points {
+          font-size: 18px;
+          font-weight: 800;
+          margin-top: 0px;
+        }
+        &.oxhunt-prize__title {
+          font-size: 22px;
+          font-weight: 800;
+           margin-top: 7px;
+           font-family: var(--font-medium);
+        }
+      }
+    }
+  }
+  
