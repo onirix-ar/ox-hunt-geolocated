@@ -20,6 +20,8 @@ After the _fork_ is created, click the _Clone_ button and copy the link inside. 
 
 Once it is downloaded, you can open it in your _IDE_ of choice and take a look at the content. However, before you run and test the project, you need to set up **Firebase** to store the data (events, users, etc) of the treasure hunt.
 
+>If you are not able to connect to firestore with code on github, try to update the version of the firebase-functions ([View here]( https://www.npmjs.com/package/firebase-functions)).
+
 ## Step 2: Set up Firebase
 The Ipsum Hunt example uses **Firebase** to store and consume the data generated in the application and thus you will need to create a **Firebase** account using your Google account and configure a new project to connect it to the application.
 
@@ -28,7 +30,7 @@ Once you are logged in on **Firebase**’s console, choose the “_Add project_�
 
 <img width="500" alt="createfirebaseproject" src="https://user-images.githubusercontent.com/118167082/201620403-869a8848-eda0-4dbd-8cd5-7dc4c0326bde.png">
 
-!!! If you are interested in setting up Google Analytics on an Onirix Web AR experience check [this tutorial](https://docs.onirix.com/tutorials/include-google-analytics-in-web-ar).
+>If you are interested in setting up Google Analytics on an Onirix Web AR experience check [this tutorial](https://docs.onirix.com/tutorials/include-google-analytics-in-web-ar).
 
 Finally, select create project, wait for the process to complete and click _Continue_. 
 
@@ -275,31 +277,6 @@ To achieve this, select the project that you have just created, click the _Setti
 ![copy-onirix-token](https://user-images.githubusercontent.com/118167082/201621908-e6321d0f-796b-4878-887a-576789589ee1.png)
 <img width="300" alt="env" src="https://user-images.githubusercontent.com/118167082/201621942-7187fac9-99b6-4df7-bf7b-837c90d8c404.png">
 
-
-### Settings collection
-To configure the project you have to set some values in a single and unique record inside the Settings collection on Firestore:
-
-* **name**: name of the festival / event
-* **appHost**: host where the app is deployed (used in mails).
-* **emailFrom**: emails from address.
-* **startDate**: the date when the event starts (UTC).
-* **endDate**: the date when the event ends (UTC).
-* **startTime**: the hour and minutes that game period starts (UTC).
-* **endTime**: the hour and minutes that game period ends (UTC).
-* **onirixHost**: the Onirix Studio host.
-* **onirixProjectOid**: the oid of the project used by de app.
-* **onirixProjectToken**: the public token of the project.
-* **scenes**: the oids of playable scenes.
-* **cashierToken**: password used by cashier to redeem user's points.
-* **tiers**:
-    * **name**: name of the tier.
-    * **min**: min score.
-    * **max**: max score (can be null).
-
-Start and end time applies to each day between start and end date.
-
-Firestore stores dates in UTC so be careful because Firebase considers the date entered as local and is automatically converted to UTC.
-
 ### Add IFrame
 In order for the experience to be seen, it is necessary to [embed the iframe](/onirix-player/embedded-iframes) of this experience in the application code.
 
@@ -430,7 +407,33 @@ To accomplish this, launch the application on localhost following the next steps
     3.1. Execute _npm install_ to get **Vue** and the other packages.
     3.2. Run _npm run serve_ in order to deploy the web client on port 8080.
 
-!!! Apart from third party packages, the client application depends on two Onirix libraries: [@onirix/api-client](https://www.npmjs.com/package/@onirix/api-client) and [@onirix/embed-sdk](https://www.npmjs.com/package/@onirix/embed-sdk). Make sure everything is correctly installed when running _npm install_.
+>Apart from third party packages, the client application depends on two Onirix libraries: [@onirix/api-client](https://www.npmjs.com/package/@onirix/api-client) and [@onirix/embed-sdk](https://www.npmjs.com/package/@onirix/embed-sdk). Make sure everything is correctly installed when running _npm install_.
+
+### Settings collection
+To configure the project you have to create two collections on Firestore. The first one must be the **USERS** collection, this collection does not need any document to be inserted because it will be filled as the users register.
+
+The second one must be the **SETTINGS** collection, in this collection a single document must be created containing the following fields, all of them with their complete values:
+
+* **name**: name of the festival / event (string)
+* **appHost**: host where the app is deployed (used in mails, string).
+* **emailFrom**: emails from address (string).
+* **startDate**: the date when the event starts (UTC, timestamp).
+* **endDate**: the date when the event ends (UTC, timestamp).
+* **startTime**: the hour and minutes that game period starts (UTC, string).
+* **endTime**: the hour and minutes that game period ends (UTC, string).
+* **onirixHost**: the Onirix Studio host (string).
+* **onirixProjectOid**: the oid of the project used by de app (string).
+* **onirixProjectToken**: the public token of the project (string).
+* **scenes**: the oids of playable scenes (an array of strings).
+* **cashierToken**: password used by cashier to redeem user's points. ("xfound")
+* **tiers** (an initially empty array):
+    * **name**: name of the tier (string).
+    * **min**: min score (number).
+    * **max**: max score (can be null, number).
+
+Start and end time applies to each day between start and end date.
+
+Firestore stores dates in UTC so be careful because Firebase considers the date entered as local and is automatically converted to UTC.
 
 ### Play the game
 Now that your game is running in local, you need to access localhost:8080 from the browser, once there, the landing page will be displayed.
@@ -460,7 +463,7 @@ In order to deploy your own scavenger hunt on a server, you will have to deploy 
 ### Deploy firebase functions
 To correctly deploy the firebase functions on **index.ts** to the online **Firebase** application, you will need to open a new terminal and run the command _firebase deploy_. This will compile the code, connect to Google’s cloud services and deploy the functions there.
 
-!!! To achieve this you will need to upgrade your **Firebase** plan to the “Blaze (pay as you go)” billing plan.
+>To achieve this you will need to upgrade your **Firebase** plan to the “Blaze (pay as you go)” billing plan.
 
 ### Generate and serve the client’s bundle
 After the **Firebase** backend is deployed, your next action should be to serve the web application so it can be publicly accessed.
